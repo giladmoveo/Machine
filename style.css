@@ -1,12 +1,18 @@
 *{
 	box-sizing: border-box;
-	/*From Orly last lesson */
 	margin:0px;
 }
 
 body{
 	direction:rtl;
-background: #0A2A29 !important;
+	background: #0A2A29 !important;
+}
+
+.title{
+	font-family: "Showcard Gothic", Times, serif;
+	text-align: center;
+	color:white;
+	
 }
 
 .overlay {
@@ -24,7 +30,6 @@ background: #0A2A29 !important;
   font-size: 120%;
   background-color: #ff0000	;
 }
-
 
 
 .sqs-block-button-element--small {
