@@ -49,5 +49,9 @@ background: #0A2A29 !important;
   margin-bottom:5px;
 
 }
+.bt:hover
+{
+	opacity:0.8;
+}
 
 
