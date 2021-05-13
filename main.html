@@ -89,6 +89,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#bt2").click(function(){
   do_press($("#bt2").text(),"#bt2");
+ 
   });
 });
 
@@ -208,35 +209,56 @@ function play_button() { // when you press stop button
 </head>
 <body>
 
-<div class="overlay">
-	<h1>Looper Machine</h1>
-	</div>
-	
-<div class="grid-container">
-	
-	
-	<div class="bt bt1 pointer" id="bt1" type="button" >120 future funk beats 25</div>
-	<div class="bt bt2 pointer" id="bt2" type="button" >120 stutter breakbeats 16</div>
-	<div class="bt bt3 pointer" id="bt3" type="button" >Bass Warwick heavy funk</div>	
-	<div class="bt bt4 pointer" id="bt4" type="button" >electric guitar coutry slide 120bpm - B</div>
-	<div class="bt bt5 pointer" id="bt5" type="button" >FUD 120 Stompy Slosh</div>
-	<div class="bt bt6 pointer" id="bt6" type="button" >GrooveB 120bpm Tanggu</div>	
-	<div class="bt bt7 pointer" id="bt7" type="button" >MazePolitics 120 Perc</div>
-	<div class="bt bt8 pointer" id="bt8" type="button" >PAS3GROOVE 1.03B</div>
-	<div class="bt bt9 pointer" id="bt9" type="button" >SilentStar 120 Em OrganSynth</div>	
-	</div>
 
-	
-			<audio id="myAudio">
-			<source src="C:\Users\TOMER1\Desktop\proj\music\120_future_funk_beats_25.mp3" type="audio/mpeg" preload="auto">
-			Your browser does not support the audio element.
-			</audio>
-			<div class="overlay">
-			<button class="btn btn-default" id="stop" onclick="stop_button()"><a><i class="glyphicon glyphicon-stop"></i></a> </button>
-			<button class="btn btn-default" id="pause" onclick="pause_button()">  <a><i class="glyphicon glyphicon-pause"></i></a> </button>			
+<div class="container">
+	<div class="overlay">
+	<h1>Looper Machine</h1>
+	<div class="overlay">
+			<button class="btn btn-default" onclick="stop_button()"><a><i class="glyphicon glyphicon-stop"></i></a> </button>
+			<button class="btn btn-default" onclick="pause_button()">  <a><i class="glyphicon glyphicon-pause"></i></a> </button>			
 			<button class="btn btn-default" onclick="play_button()" ><a><i class="glyphicon glyphicon-play green-text"></i></a> </button>
 
 			</div>
+	</div>
+	<div class="row">
+	
+		<div class="col-md-4 col-xs-12">
+			<button class="bt bt1 sqs-block-button-element--small" id="bt1" type="button" >120 future funk beats 25</button>
+		</div>
+		<div class="col-md-4 col-xs-12 ">
+			<button class="bt bt2 sqs-block-button-element--small" id="bt2" type="button" >120 stutter breakbeats 16</button>
+		</div>
+		<div class="col-md-4 col-xs-12 ">
+			<button class="bt bt3 sqs-block-button-element--small" id="bt3" type="button" >Bass Warwick heavy funk</button>
+		</div>	
+	</div>
+	<div class="row">
+	
+		<div class="col-md-4 col-xs-12">
+			<button class="bt bt4 sqs-block-button-element--small" id="bt4" type="button" >electric guitar coutry slide 120bpm - B</button>
+		</div>
+		<div class="col-md-4 col-xs-12 ">
+			<button class="bt bt5 sqs-block-button-element--small" id="bt5" type="button" >FUD 120 Stompy Slosh</button>
+		</div>
+		<div class="col-md-4 col-xs-12 ">
+			<button class="bt bt6 sqs-block-button-element--small" id="bt6" type="button" >GrooveB 120bpm Tanggu</button>
+		</div>	
+	</div>
+	<div class="row">
+	
+		<div class="col-md-4 col-xs-12">
+			<button class="bt bt7 sqs-block-button-element--small" id="bt7" type="button" >MazePolitics 120 Perc</button>
+		</div>
+		<div class="col-md-4 col-xs-12 ">
+			<button class="bt bt8 sqs-block-button-element--small" id="bt8" type="button" >PAS3GROOVE 1.03B</button>
+		</div>
+		<div class="col-md-4 col-xs-12 ">
+			<button class="bt bt9 sqs-block-button-element--small" id="bt9" type="button" >SilentStar 120 Em OrganSynth</button>
+		</div>	
+	</div>
+
+	
+			
 </div>
 </body>
 </html>
