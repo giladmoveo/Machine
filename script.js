@@ -1,14 +1,17 @@
 var audioElement;
 var array = [];
 
-class Sound {   // press button we create sound object
+
+class Sound {   // Sound object contains : name and audio_element object
     constructor(label,audio) {
 	    this.name = label;
-        this.sound = audio;
+        this.audio_element = audio;
     }  
 } 
 
-function do_press(label,button_id) { // when you press button
+
+function do_press(label,button_id) { // when user press on a button
+//assigning label to link
 	if(label=="120 future funk beats 25")
 		link='https://static.wixstatic.com/mp3/eda39a_747bbdcf495845c5af816d857b450b11.mp3';
 	if(label=="120 stutter breakbeats 16")
@@ -29,38 +32,38 @@ function do_press(label,button_id) { // when you press button
 		link='https://static.wixstatic.com/mp3/eda39a_9fa9170aed3d4207ac2d6d113949c23b.mp3';
 	
 
-	audioElement= new Audio(link); // Create Audio element for playing music.
+	audioElement= new Audio(link); // Create  an audio element for playing music.
   
 
   	if ($(button_id).css('background-color')!="rgb(255, 0, 0)") // check if button is not pressed
 		{		 
 		array.push(new Sound(label,audioElement)); // Add new Sound object to array.
-		audioElement.onended = function() // Listener for finish the first looper.
+		audioElement.onended = function() // Listener for finish the first loop.
 		{
 		
-			for (var i =0; i <array.length; i++) { // Loop over all the selected sounds.
-				array[i].sound.play(); // play sound.
+			for (var i =0; i <array.length; i++) { // Loop over all the selected audio_elements.
+				array[i].audio_element.play(); // play audio_element.
 				
 		}
 		}
 	
-	if(array.length==1) //if there is only 1 sound, play it immediatly.
+	if(array.length==1) //if there is only 1 audio_element, play it immediatly.
 		audioElement.play();
 
 		 
 		}
 	else //if button is pressed
 		{
-		for (var i =0; i <array.length; i++) { // loop over array
-			if(array[i].sound.src==link) // if you find the Sound object
+		for (var i =0; i <array.length; i++) { // loop over the array
+			if(array[i].audio_element.src==link) // if you find the Sound object
 				{
-				array[i].sound.pause(); // pause it
+				array[i].audio_element.pause(); // pause it
 				array.splice(i,1); // remove it
 				}
 			}	
 
 		}
-	$(button_id).toggleClass("pressed"); // switch color button when press
+	$(button_id).toggleClass("pressed"); // switch color button when user press it
 } //end of do_press function
 
 
@@ -122,14 +125,31 @@ $(document).ready(function(){
 
 
 
-
-
-function stop_button() { // when you press stop button
+function play_button() { // when user press on play button
 
 		for (var i =0; i <array.length; i++) { // loop over array
-			array[i].sound.pause();
+		array[i].audio_element.play(); // play sound 
+		}
+	}
+
+
+function pause_button() { // when user press on pause button
+
+		for (var i =0; i <array.length; i++) { // loop over array
+		array[i].audio_element.pause(); // pause sound 
+		
+		}
+
 }
-			array=[];
+
+
+function stop_button() { // when user press on stop button
+
+		for (var i =0; i <array.length; i++) { // loop over array
+			array[i].audio_element.pause(); // pause sound 
+}
+			array=[]; // reset the sounds in the loop
+			
   if ($("#bt1").css('background-color')=="rgb(255, 0, 0)")
 {
     $("#bt1").toggleClass("pressed");
@@ -169,19 +189,3 @@ function stop_button() { // when you press stop button
 }
 
 }
-
-function pause_button() { // when you press stop button
-
-		for (var i =0; i <array.length; i++) { // loop over array
-		array[i].sound.pause();
-		
-		}
-
-}
-
-function play_button() { // when you press stop button
-
-		for (var i =0; i <array.length; i++) { // loop over array
-		array[i].sound.play();
-		}
-		}
